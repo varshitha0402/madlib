@@ -16,5 +16,3 @@ document.getElementById('generateMadLib').addEventListener('click', () => {
     output.style.display = 'block';
     output.textContent = madLib;
 });
-
-
