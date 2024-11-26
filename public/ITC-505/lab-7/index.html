@@ -4,97 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mad Lib</title>
-</head>
-<style>/* General Page Styling */
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
-    }
-    
-    /* Header Styling */
-    h1 {
-        text-align: center;
-        color: #444;
-        margin-top: 20px;
-    }
-    
-    /* Form Styling */
-    form {
-        max-width: 400px;
-        margin: 30px auto;
-        padding: 20px;
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    form label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-    
-    form input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    
-    form button {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        background: #5cb85c;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    
-    form button:hover {
-        background: #4cae4c;
-    }
-    
-    /* Footer Styling */
-    footer {
-        text-align: center;
-        margin-top: 30px;
-        padding: 10px;
-        background: #444;
-        color: white;
-    }
-    
-    footer p {
-        margin: 0;
-    }
-    
-    /* Response Page Styling */
-    p {
-        text-align: center;
-        font-size: 18px;
-        margin: 20px 0;
-    }
-    
-    a {
-        display: inline-block;
-        margin-top: 20px;
-        text-decoration: none;
-        color: #007bff;
-        font-weight: bold;
-    }
-    
-    a:hover {
-        text-decoration: underline;
-    }
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header Styling */
+        h1 {
+            text-align: center;
+            color: #0cb7ae;
+            font-size: 2.5em;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Form Styling */
+        form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+        }
+
+        form:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border 0.2s ease-in-out;
+        }
+
+        form input[type="text"]:focus {
+            border-color: #0cb7ae;
+            outline: none;
+            box-shadow: 0 0 5px rgba(12, 183, 174, 0.5);
+        }
+
+        form button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #0cb7ae, #1789b5);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.2em;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+
+        form button:hover {
+            background: linear-gradient(45deg, #1789b5, #0cb7ae);
+            transform: scale(1.02);
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 15px;
+            background: #0cb7ae;
+            color: white;
+            font-size: 1em;
+        }
+
+        footer p {
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        /* Addendum Styling */
+        .addendum {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #f4f4f9;
+            padding: 10px;
+        }
+
+        /* Response Page Styling */
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #444;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #0cb7ae;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #1789b5;
+        }
     </style>
+</head>
 <body>
     <h1>Mad Lib Form</h1>
     <form action="/ITC505/lab-7/index.html" method="POST">
@@ -118,6 +154,24 @@
 
     <footer>
         <p>Last updated: <span id="lastModified"></span></p>
+        <div class="addendum">
+            <p>
+                Welcome to the Mad Lib Form! This interactive tool is designed to let users create fun, personalized stories
+                by filling in different types of words. Here’s a breakdown of its elements:
+            </p>
+            <ul>
+                <li><strong>Noun:</strong> Represents a person, place, or thing (e.g., "dog," "city").</li>
+                <li><strong>Adjective:</strong> Describes a noun (e.g., "happy," "blue").</li>
+                <li><strong>Verb:</strong> An action word (e.g., "run," "jump").</li>
+                <li><strong>Plural Noun:</strong> A noun in plural form (e.g., "dogs," "cities").</li>
+                <li><strong>Adverb:</strong> Describes a verb, often ending in "-ly" (e.g., "quickly," "happily").</li>
+            </ul>
+            <p>
+                This form uses HTML to structure the inputs, CSS to style the page for a modern look, and JavaScript
+                to display the last updated time dynamically. It’s an excellent example of combining creativity and web development
+                techniques to deliver an engaging user experience.
+            </p>
+        </div>
     </footer>
     <script type="text/javascript">
         var x = document.lastModified;
