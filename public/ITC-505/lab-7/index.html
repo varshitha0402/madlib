@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lib</title>
+</head>
+<style>/* General Page Styling */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+    }
+    
+    /* Header Styling */
+    h1 {
+        text-align: center;
+        color: #444;
+        margin-top: 20px;
+    }
+    
+    /* Form Styling */
+    form {
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    form button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background: #5cb85c;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background: #4cae4c;
+    }
+    
+    /* Footer Styling */
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 10px;
+        background: #444;
+        color: white;
+    }
+    
+    footer p {
+        margin: 0;
+    }
+    
+    /* Response Page Styling */
+    p {
+        text-align: center;
+        font-size: 18px;
+        margin: 20px 0;
+    }
+    
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    </style>
+<body>
+    <h1>Mad Lib Form</h1>
+    <form action="/ITC505/lab-7/index.html" method="POST">
+        <label for="noun">Noun:</label>
+        <input type="text" id="noun" name="noun" required><br>
+
+        <label for="adjective">Adjective:</label>
+        <input type="text" id="adjective" name="adjective" required><br>
+
+        <label for="verb">Verb:</label>
+        <input type="text" id="verb" name="verb" required><br>
+
+        <label for="pluralNoun">Plural Noun:</label>
+        <input type="text" id="pluralNoun" name="pluralNoun" required><br>
+
+        <label for="adverb">Adverb:</label>
+        <input type="text" id="adverb" name="adverb" required><br>
+
+        <button type="submit">Create Mad Lib</button>
+    </form>
+
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
